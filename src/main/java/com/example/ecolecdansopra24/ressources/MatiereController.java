@@ -45,4 +45,17 @@ public class MatiereController {
         return new ResponseEntity<>(service.toDto(ID), HttpStatusCode.valueOf(200));
 
     }
+
+    @GetMapping ("getAll")
+    public ResponseEntity getAll (){
+        return new  ResponseEntity(service.getAll(), HttpStatusCode.valueOf(200));
+    }
+
+    @GetMapping("stats")
+    public ResponseEntity exemple(){
+        return new ResponseEntity(service.getByLibelle(), HttpStatusCode.valueOf(200));
+    }
+
+
+
 }
