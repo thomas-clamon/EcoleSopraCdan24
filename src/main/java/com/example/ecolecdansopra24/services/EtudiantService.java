@@ -1,6 +1,6 @@
 package com.example.ecolecdansopra24.services;
 
-import com.example.ecolecdansopra24.dtos.InEtudiantDto;
+import com.example.ecolecdansopra24.dtos.OutEtudiantDto;
 import com.example.ecolecdansopra24.entities.EtudiantEntity;
 import com.example.ecolecdansopra24.repositories.EtudiantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +21,8 @@ public class EtudiantService implements IEtudiantService{
     }
 
     @Override
-    public InEtudiantDto toDto(EtudiantEntity entity) {
-        InEtudiantDto dto = new InEtudiantDto();
+    public OutEtudiantDto toDto(EtudiantEntity entity) {
+        OutEtudiantDto dto = new OutEtudiantDto();
 
         // je recupere mon entite
         dto.setDisplay_name(entity.getFirstname() + " " + entity.getName());

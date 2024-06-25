@@ -1,6 +1,6 @@
 package com.example.ecolecdansopra24.services;
 
-import com.example.ecolecdansopra24.dtos.InEtudiantDto;
+import com.example.ecolecdansopra24.dtos.OutEtudiantDto;
 import com.example.ecolecdansopra24.entities.EtudiantEntity;
 
 public interface IEtudiantService {
@@ -15,9 +15,9 @@ public interface IEtudiantService {
     /**
      * Convertie mon entite en DTO
      * @param entity
-     * @return InEtudiantDto
+     * @return OutEtudiantDto
      */
-    InEtudiantDto toDto(EtudiantEntity entity);
+    OutEtudiantDto toDto(EtudiantEntity entity);
 
     /**
      * Recupere une entité par l'ID

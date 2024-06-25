@@ -1,8 +1,6 @@
 package com.example.ecolecdansopra24.dtos;
 
-import jakarta.persistence.criteria.CriteriaBuilder;
-
-public class InEtudiantDto {
+public class OutEtudiantDto {
 
     private String display_name;
 
