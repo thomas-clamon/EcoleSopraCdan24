@@ -9,4 +9,6 @@ public interface INoteService {
      * @return
      */
     Integer addNotes(NoteDto dto);
+
+    Integer getAVG(Integer id);
 }

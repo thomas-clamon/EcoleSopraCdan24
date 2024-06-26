@@ -68,4 +68,18 @@ public class MatiereService implements IMatiereService{
     public List<OutNbMatiereDto> getByLibelle() {
         return matiereRpository.stats();
     }
+
+    @Override
+    public Boolean delete(Integer id) {
+
+        try {
+
+            matiereRpository.deleteById(id);
+            return true;
+
+        }catch (Exception e){
+
+            return false;
+        }
+    }
 }

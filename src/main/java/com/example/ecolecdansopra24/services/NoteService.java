@@ -38,4 +38,9 @@ public class NoteService implements INoteService{
 
 
     }
+
+    @Override
+    public Integer getAVG(Integer id) {
+        return noteRepository.getAVG(id);
+    }
 }

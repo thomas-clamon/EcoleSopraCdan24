@@ -21,5 +21,7 @@ public interface IMatiereService {
 
     List<OutNbMatiereDto> getByLibelle();
 
+    Boolean delete (Integer id);
+
 
 }

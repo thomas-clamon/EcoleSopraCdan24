@@ -5,10 +5,7 @@ import com.example.ecolecdansopra24.services.NoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("Notes")
@@ -22,5 +19,10 @@ public class NotesController {
 
         Integer ID = noteService.addNotes(dto);
         return new ResponseEntity(ID, HttpStatusCode.valueOf(200));
+    }
+
+    @GetMapping("AVG")
+    public ResponseEntity avg(){
+        return new ResponseEntity(noteService.getAVG(1), HttpStatusCode.valueOf(200));
     }
 }

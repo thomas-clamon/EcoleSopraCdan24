@@ -1,8 +1,10 @@
 package com.example.ecolecdansopra24.ressources;
 
+import com.example.ecolecdansopra24.dtos.OutEtudiantDto;
 import com.example.ecolecdansopra24.entities.EtudiantEntity;
 import com.example.ecolecdansopra24.repositories.EtudiantRepository;
 import com.example.ecolecdansopra24.services.EtudiantService;
+import com.example.ecolecdansopra24.services.NoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +20,9 @@ public class EtudiantController {
     @Autowired
     private EtudiantService service;
 
+    @Autowired
+    private NoteService noteService;
+
     @GetMapping("get/{id}")
     public ResponseEntity get(@PathVariable String id){
 
@@ -27,8 +32,16 @@ public class EtudiantController {
         if (!service.exist(ID))
             return new ResponseEntity("l'etudiant n'exsite pas", HttpStatusCode.valueOf(400));
 
+
+
         // sinon
         EtudiantEntity entity = service.get(ID);
-        return new ResponseEntity(service.toDto(entity), HttpStatusCode.valueOf(200));
+        OutEtudiantDto dto = service.toDto(entity);
+
+        // calculer sa moyenne
+        Integer moyenne = noteService.getAVG(ID);
+        dto.setMoyenne(moyenne);
+
+        return new ResponseEntity(dto, HttpStatusCode.valueOf(200));
     }
 }

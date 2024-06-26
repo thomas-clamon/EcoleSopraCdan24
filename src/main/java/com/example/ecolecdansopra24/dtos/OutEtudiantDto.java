@@ -8,6 +8,16 @@ public class OutEtudiantDto {
 
     private String type;
 
+    private Integer moyenne;
+
+    public Integer getMoyenne() {
+        return moyenne;
+    }
+
+    public void setMoyenne(Integer moyenne) {
+        this.moyenne = moyenne;
+    }
+
     public String getDisplay_name() {
         return display_name;
     }
